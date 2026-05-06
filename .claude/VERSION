@@ -1,0 +1,22 @@
+{
+  "name": "coc-claude-base",
+  "version": "2.20.0",
+  "type": "coc-use-template",
+  "description": "Language-agnostic, non-Kailash CO/COC USE template (variant: base)",
+  "synced_at": "2026-05-06T04:10:45Z",
+  "upstream": {
+    "name": "loom",
+    "type": "coc-source",
+    "version": "2.20.0",
+    "loom_sha": "7b7c4a4",
+    "synced_at": "2026-05-06T04:10:45Z",
+    "template_version": "2.20.0",
+    "sdk_packages": {}
+  },
+  "variant": "base",
+  "tier_subscriptions": [
+  "cc",
+  "co",
+  "onboarding"
+]
+}
