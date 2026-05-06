@@ -1,10 +1,20 @@
-synced_at: 2026-05-06T04:10:45Z
-loom_sha: 7b7c4a4
-loom_version: 2.20.0
+# COC Sync Marker — coc-claude-base
+timestamp: 2026-05-06T06:46:57Z
+source: loom/.claude
 variant: base
-tier_subscriptions: [cc,co,onboarding]
-maiden_seed: true
-files_emitted: 105
-files_via_overlay: 2
-hooks_emitted: 30
-bin_emitted: 6
+clis: [claude]
+tier_subscriptions: [cc, co, onboarding]
+loom_version: 2.21.0
+loom_sha: e047b66
+stats:
+  updated: 8
+  created: 0
+  unchanged: 123
+  composed: 2       # rules/agents.md + rules/independence.md (slot-keyed overlays composed via compose.mjs)
+  preserved: 1      # CLAUDE.md (template-owned, never overwritten)
+  baselines_emitted:
+    cc: 0           # CLAUDE.md preserved, not emitted
+    codex: 0        # CC-only template
+    gemini: 0       # CC-only template
+  purged_obsoleted: 0       # obsoleted: paths from manifest
+  purged_use_obsoleted: 0   # use_obsoleted: paths from manifest
