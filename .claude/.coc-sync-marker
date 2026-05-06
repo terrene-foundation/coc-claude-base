@@ -1,18 +1,18 @@
 # COC Sync Marker — coc-claude-base
-timestamp: 2026-05-06T13:13:25Z
+timestamp: 2026-05-06T21:30:00Z
 source: loom/.claude
 variant: base
 template_type: cc-only-legacy
 clis: [claude]
-loom_sha: c18742b
-loom_version: 2.26.0
-template_version: 2.26.0
+loom_sha: e1569bd
+loom_version: 2.27.0
+template_version: 2.27.0
 stats:
-  updated: 5
-  created: 71
-  unchanged: 127
-  composed: 2
-  preserved: 6   # CLAUDE.md, README.md, LICENSE, .claude/VERSION (initial state), .claude/learning/, .claude/.proposals
+  updated: 0
+  created: 1   # commands/cli-audit.md (co tier; new in v2.27.0)
+  unchanged: 199   # entire prior baseline
+  composed: 0   # 2.27.0 introduced no rule changes; manifest-only tier classification
+  preserved: 6   # CLAUDE.md, README.md, LICENSE, .claude/VERSION (now updated), .claude/learning/, .claude/.proposals
   baselines_emitted:
     cc: 0   # CLAUDE.md preserved (template-owned)
     codex: 0
@@ -25,3 +25,16 @@ stats:
     predicates_extracted: 1
 tier_subscriptions: [cc, co, onboarding]
 tier_filter_verified: zero_kailash_framework_leaks
+delta_summary: |
+  Wave 3b incremental sync from loom v2.26.0 → v2.27.0.
+  v2.27.0 was a manifest-only tier classification of 5 paths that
+  existed in loom but were unclassified. For base templates with
+  tier_subscriptions = [cc, co, onboarding]:
+    - co tier:  commands/cli-audit.md            ← LANDED (1 new file)
+    - coc tier: agents/cli-orchestrator.md       ← FILTERED (no coc subscription)
+    - coc tier: agents/codex-architect.md        ← FILTERED
+    - coc tier: agents/gemini-architect.md       ← FILTERED
+    - coc tier: guides/codex/**                  ← FILTERED
+  Tier filter verification (manifest-only release, no rule changes):
+  zero leaks of Kailash specialists / kailash-coupled skills / coc
+  agents — confirmed by per-file enumeration before write.
