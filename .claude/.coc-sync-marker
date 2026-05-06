@@ -1,17 +1,17 @@
 # COC Sync Marker — coc-claude-base
-timestamp: 2026-05-06T21:30:00Z
+timestamp: 2026-05-06T22:30:00Z
 source: loom/.claude
 variant: base
 template_type: cc-only-legacy
 clis: [claude]
-loom_sha: e1569bd
-loom_version: 2.27.0
-template_version: 2.27.0
+loom_sha: c5565fe
+loom_version: 2.28.0
+template_version: 2.28.0
 stats:
-  updated: 0
-  created: 1   # commands/cli-audit.md (co tier; new in v2.27.0)
+  updated: 2   # commands/cc-audit.md (cc tier) + commands/cli-audit.md (co tier)
+  created: 0
   unchanged: 199   # entire prior baseline
-  composed: 0   # 2.27.0 introduced no rule changes; manifest-only tier classification
+  composed: 0   # 2.28.0 introduced no rule body changes; prose-only command + agent updates
   preserved: 6   # CLAUDE.md, README.md, LICENSE, .claude/VERSION (now updated), .claude/learning/, .claude/.proposals
   baselines_emitted:
     cc: 0   # CLAUDE.md preserved (template-owned)
@@ -26,15 +26,18 @@ stats:
 tier_subscriptions: [cc, co, onboarding]
 tier_filter_verified: zero_kailash_framework_leaks
 delta_summary: |
-  Wave 3b incremental sync from loom v2.26.0 → v2.27.0.
-  v2.27.0 was a manifest-only tier classification of 5 paths that
-  existed in loom but were unclassified. For base templates with
-  tier_subscriptions = [cc, co, onboarding]:
-    - co tier:  commands/cli-audit.md            ← LANDED (1 new file)
-    - coc tier: agents/cli-orchestrator.md       ← FILTERED (no coc subscription)
-    - coc tier: agents/codex-architect.md        ← FILTERED
-    - coc tier: agents/gemini-architect.md       ← FILTERED
-    - coc tier: guides/codex/**                  ← FILTERED
-  Tier filter verification (manifest-only release, no rule changes):
-  zero leaks of Kailash specialists / kailash-coupled skills / coc
-  agents — confirmed by per-file enumeration before write.
+  Incremental sync from loom v2.27.0 → v2.28.0 (probe-driven verification Phase 2).
+  v2.28.0 ships 9 prose-only files in loom; for base templates with
+  tier_subscriptions = [cc, co, onboarding] only 2 propagate:
+    - cc tier:  commands/cc-audit.md            ← LANDED
+    - co tier:  commands/cli-audit.md           ← LANDED
+    - coc tier: agents/cli-orchestrator.md      ← FILTERED (no coc subscription)
+    - coc tier: agents/quality/reviewer.md      ← FILTERED
+    - coc tier: agents/quality/security-reviewer.md ← FILTERED
+    - coc tier: agents/testing/testing-specialist.md ← FILTERED
+    - coc tier: commands/redteam.md             ← FILTERED
+    - coc tier: commands/codify.md              ← FILTERED
+    - excluded: test-harness/README.md          ← MANIFEST EXCLUDE
+  Tier filter verification (probe-driven Phase 2 release): zero leaks
+  of Kailash specialists / kailash-coupled skills / coc agents
+  confirmed by per-file enumeration before write.
