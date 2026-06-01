@@ -36,6 +36,7 @@ scripts/resolve-template.js
 .claude/agents/management/gh-manager.md
 .claude/agents/management/posture-auditor.md
 .claude/agents/management/todo-manager.md
+.claude/variants/
 .claude/rules/documentation.md
 .claude/skills/30-claude-code-patterns/sdk-upstream-donation.md
 .claude/guides/co-setup/
