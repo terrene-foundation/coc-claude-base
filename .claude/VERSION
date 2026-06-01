@@ -1,16 +1,16 @@
 {
   "name": "coc-claude-base",
-  "version": "2.31.0",
+  "version": "2.37.0",
   "type": "coc-use-template",
   "description": "Language-agnostic, non-Kailash CO/COC USE template (variant: base)",
-  "synced_at": "2026-05-16T13:36:54Z",
+  "synced_at": "2026-06-01T06:16:55Z",
   "upstream": {
     "name": "loom",
     "type": "coc-source",
-    "version": "2.31.0",
-    "loom_sha": "6bd4075",
-    "synced_at": "2026-05-16T13:36:54Z",
-    "template_version": "2.31.0",
+    "version": "2.37.0",
+    "loom_sha": "7a5e8be",
+    "synced_at": "2026-06-01T06:16:55Z",
+    "template_version": "2.37.0",
     "sdk_packages": {}
   },
   "variant": "base",
@@ -18,5 +18,24 @@
     "cc",
     "co",
     "onboarding"
+  ],
+  "changelog": [
+    {
+      "date": "2026-06-01",
+      "version": "2.37.0",
+      "summary": "MINOR UPSTREAM REFRESH — coc-claude-base advanced from loom@6bd4075/2.31.0 to loom@7a5e8be/2.37.0. Base lane (variant: base, tier_subscriptions: [cc, co, onboarding], build: null — NO SDK pins). Range carries loom v2.32.0–v2.37.0 incl FB (2.37.0: independence.md + terrene-naming.md removed from COC distribution — Terrene-internal messaging governance, not codegen-orchestration; purged + obsoleted-listed) + #407/base-axis version-utils.js KNOWN_TEMPLATE_REPOS fix (now carries kailash-coc-py/kailash-coc-rs/coc-base/coc-claude-base slugs; tier-independent .claude/hooks/**) + F112 (codex-architect/gemini-architect/cc-audit/skill-+command-authoring) + F113 (governed-throughput.md path-scoped). CC-only template (clis:[claude], baseline_files:[CLAUDE.md]) — NO Codex/Gemini emission. base does NOT subscribe to coc tier (no Kailash framework specialists/skills); codex-architect/gemini-architect skip/no_tier_match (correct). Canonical sync-tier-aware.mjs --target base --template coc-claude-base: copied=743, verified 743/743 byte-equal, purged=0, skipped no_tier_match=528 (coc-tier exclusion). Overlay: rules/agents.md base slot-keyed overlay re-applied (strip(compose)) — fixes prior drift-from-both; verify-overlays.sh coc-claude-base: variant-applied(base,slot) PASS. #407 version-utils.js grep -c=4. settings.json hook integrity 22/22; 0 scripts/hooks; 0 operator-PII; description normalized (Python)->(language-agnostic base). .coc-obsoleted regenerated (46 entries). NO BUILD source (build:null) — sdk_packages {}. NO .github/coc-sdk-refs-allowlist.txt (no contamination gate — Step 7.5 skipped). Disclosure preflight + pre-sync freshness PASS.",
+      "changes": [
+        "REFRESH: loom globals raw-copied via sync-tier-aware.mjs (copied=743, verified 743/743 byte-equal). base tiers=[cc,co,onboarding]; coc-tier files skipped (no_tier_match=528).",
+        "#407 + BASE-AXIS: version-utils.js KNOWN_TEMPLATE_REPOS now includes terrene-foundation/{kailash-coc-py,kailash-coc-rs,coc-base,coc-claude-base}. grep -c=4 (was 0).",
+        "OVERLAY FIX: rules/agents.md base slot-keyed overlay re-applied as strip(compose(global, variants/base)). Fixes pre-existing drift-from-both. verify-overlays.sh: variant-applied(base,slot) PASS.",
+        "FB (loom 2.37.0): independence.md + terrene-naming.md confirmed gone (purged); now on global obsoleted: list.",
+        "OBSOLETED: .coc-obsoleted regenerated (46 entries = union obsoleted + use_obsoleted, deduped).",
+        "SETTINGS: description normalized (Python)->(language-agnostic base) — base is non-Kailash language-agnostic; prior (Python) was an inherited loom-source residual. Hook integrity 22/22; 0 scripts/hooks; 0 operator-PII.",
+        "SDK PINS: build:null — no pyproject.toml/Cargo.toml; sdk_packages {} (Step 5 skipped per /sync-to-build build:null early-exit semantics).",
+        "STEP 7.5: no .github/coc-sdk-refs-allowlist.txt (no contamination gate) — skipped (legitimate absence).",
+        "CC-ONLY: clis:[claude], baseline_files:[CLAUDE.md]. NO Codex/Gemini emission. NO emit.mjs --lang headroom step. headroom_pct n/a.",
+        "PRESERVED: CLAUDE.md (template-owned); .claude/learning/** + .proposals/** + .coc-sync-marker never synced. gitignore created (10 entries, was absent)."
+      ]
+    }
   ]
 }
