@@ -1,16 +1,16 @@
 {
   "name": "coc-claude-base",
-  "version": "2.37.0",
+  "version": "2.39.0",
   "type": "coc-use-template",
   "description": "Language-agnostic, non-Kailash CO/COC USE template (variant: base)",
-  "synced_at": "2026-06-01T06:16:55Z",
+  "synced_at": "2026-06-01T12:56:41Z",
   "upstream": {
     "name": "loom",
     "type": "coc-source",
-    "version": "2.38.0",
-    "loom_sha": "1de1c41",
-    "synced_at": "2026-06-01T00:00:00Z",
-    "template_version": "2.38.0"
+    "version": "2.39.0",
+    "loom_sha": "e934018",
+    "synced_at": "2026-06-01T12:56:41Z",
+    "template_version": "2.39.0"
   },
   "variant": "base",
   "tier_subscriptions": [
@@ -19,6 +19,23 @@
     "onboarding"
   ],
   "changelog": [
+    {
+      "date": "2026-06-01",
+      "version": "2.39.0",
+      "summary": "MINOR UPSTREAM REFRESH — coc-claude-base advanced from loom@1de1c41/2.38.0 to loom@e934018/2.39.0. Base lane (variant: base, tier_subscriptions: [cc, co, onboarding], build: null — NO SDK pins). Carries PR #425's converged global-tier artifacts: #411 F101-3 journal author-discipline (new rule journal-author-discipline.md + provenance-author-backing.js hook + journal-write-guard.js author-backing branch + decision-recording-discipline skill + audit-fixtures/journal-author-discipline/), F110 governed-throughput refresh of agents.md, plus trust-posture.md + self-referential-codify.md allowlist extensions for the new rule/hook surface. The #423 rb->rs all-bindings collapse is rs-lane-only and does NOT touch base. CC-only template (clis:[claude], baseline_files:[CLAUDE.md]) — NO Codex/Gemini emission. base does NOT subscribe to coc tier (no Kailash framework specialists/skills); codex-architect/gemini-architect skip/no_tier_match (correct). Canonical sync-tier-aware.mjs --target base --template coc-claude-base: copied=755, purged=0, skipped no_tier_match=528 (coc-tier exclusion) + exclude=764 + use_exclude=29 + loom_only=8 + loom_local=2. OVERLAY FIX: rules/agents.md base slot-keyed overlay re-applied as strip(compose(global, variants/base)) — the tier-aware raw-copy initially shipped the loom global (drift-from-both); corrected to the composed+stripped form matching the sister coc-base PASS. verify-overlays.sh base: 2/2 PASS, Failing: 0. settings.json unchanged: hook integrity 22/22; 0 scripts/hooks; 0 operator-PII; description (language-agnostic base) correct for base variant. .coc-obsoleted regenerated (union obsoleted + use_obsoleted). NO BUILD source (build:null) — sdk_packages {}. NO .github/coc-sdk-refs-allowlist.txt (no contamination gate — Step 7.5 skipped). Disclosure preflight (scan-synced-disclosure --check exit 0) + HALT-on-dirty-tracked (clean) PASS.",
+      "changes": [
+        "REFRESH: loom globals raw-copied via sync-tier-aware.mjs (copied=755). base tiers=[cc,co,onboarding]; coc-tier files skipped (no_tier_match=528).",
+        "NEW (PR #425 / #411 F101-3): journal-author-discipline.md rule + provenance-author-backing.js hook + decision-recording-discipline.md skill + audit-fixtures/journal-author-discipline/ landed (4 new paths).",
+        "MODIFIED (PR #425): agents.md (F110 governed-throughput), security.md, journal.md, self-referential-codify.md + trust-posture.md (allowlist + emergency-trigger extensions for the new rule/hook), emit.mjs, scan-synced-disclosure.mjs, journal-write-guard.js.",
+        "OVERLAY FIX: rules/agents.md base slot-keyed overlay re-applied as strip(compose(global, variants/base)). tier-aware raw-copy had shipped the loom global (drift-from-both); corrected to composed+stripped (md5 matches sister coc-base PASS). verify-overlays.sh base: variant-applied(base,slot) PASS.",
+        "OBSOLETED: .coc-obsoleted regenerated (union obsoleted + use_obsoleted, deduped). All obsoleted paths confirmed absent on disk.",
+        "SETTINGS: unchanged by sync. Hook integrity 22/22; 0 scripts/hooks refs; 0 operator-PII; description (language-agnostic base) correct (base is its own variant, not py/rs/rb).",
+        "SDK PINS: build:null — no pyproject.toml/Cargo.toml; sdk_packages {} (Step 5 skipped per build:null early-exit semantics).",
+        "STEP 7.5: no .github/coc-sdk-refs-allowlist.txt (no contamination gate) — skipped (legitimate absence).",
+        "CC-ONLY: clis:[claude], baseline_files:[CLAUDE.md]. NO Codex/Gemini emission. NO emit.mjs --lang headroom step. headroom_pct n/a.",
+        "PRESERVED: CLAUDE.md (template-owned, never overwritten); .claude/learning/** + .proposals/** + .coc-sync-marker never synced."
+      ]
+    },
     {
       "date": "2026-06-01",
       "version": "2.37.0",

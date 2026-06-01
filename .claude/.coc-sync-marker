@@ -1,14 +1,28 @@
 # COC Sync Marker — coc-claude-base
-timestamp: 2026-06-01T07:15:00Z
+timestamp: 2026-06-01T12:56:41Z
 source: loom/.claude
-loom_sha: 1de1c41
-loom_version: 2.38.0
+loom_sha: e934018
+loom_version: 2.39.0
 variant: base
 clis: [claude]
 visibility: public
 stats:
-  content_synced_byte_equal: true
+  copied: 755
+  purged: 0
+  skipped:
+    no_tier_match: 528
+    exclude: 764
+    use_exclude: 29
+    loom_only: 8
+    loom_local: 2
   baseline_status: none
+  overlay_fix:
+    path: .claude/rules/agents.md
+    form: slot-keyed
+    action: strip(compose(global, variants/base)) re-applied
+    verify_overlays: variant-applied(base,slot) PASS
+  verify_overlays_failing: 0
+  hook_integrity: 22/22
   preserved:
     - CLAUDE.md
     - README.md
