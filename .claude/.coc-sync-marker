@@ -1,20 +1,25 @@
-# COC Sync Marker — coc-claude-base
-visibility: public
-timestamp: 2026-06-11T10:34:16Z
+# COC Sync Marker — coc-claude-base (base lane, cc-only-legacy)
+timestamp: 2026-06-11T14:42:00Z
 source: loom/.claude
-loom_sha: bbfa970
-loom_version: 2.41.0
+loom_sha: 036c8ff
+upstream_version: 2.42.0
+template_version: 2.42.0
 variant: base
+visibility: public
 clis: ["claude"]
+tier_subscriptions: ["cc", "co", "onboarding"]
 stats:
-  copied: 822
-  variant_only: 0
-  overlays: 1
-  composed: 0
-  preserved: 1   # CLAUDE.md
-  purged: 0
-  skipped: { loom_local: 2, exclude: 869, use_exclude: 29, no_tier_match: 514 }
-  baselines_emitted: { cc: 0 }
-  cli_artifacts: null   # cc-only template
-  sdk_pins_changed: null   # build:null — non-Kailash
-headline: "Version-currency stamp (loom 2.41.0); CMA skill is coc-tier, base-excluded by design"
+  copied: 844
+  verified: 844
+  verify_failures: 0
+  stripped: 15
+  composed: 1          # rules/agents.md base slot-keyed overlay (mode:slot)
+  overlay_verified: 1
+  purged: 0            # 13 obsoleted paths declared; all absent on disk
+  preserved: CLAUDE.md
+  baselines_emitted:
+    cc: 0              # CLAUDE.md preserved, not emitted
+    codex: 0           # cc-only — no AGENTS.md
+    gemini: 0          # cc-only — no GEMINI.md
+  cli_artifacts: null  # cc-only-legacy — no .codex/.gemini emission
+  sdk_packages: {}     # build:null — language-agnostic base, no SDK pins
