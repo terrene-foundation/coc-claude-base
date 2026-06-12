@@ -1,10 +1,10 @@
 # COC Sync Marker — coc-claude-base (base lane, cc-only-legacy)
 visibility: public
-timestamp: 2026-06-11T15:05:00Z
+timestamp: 2026-06-12T00:00:00Z
 source: loom/.claude
-loom_sha: 1d6968e
-upstream_version: 2.42.1
-template_version: 2.42.1
+loom_sha: d7ec0d2
+upstream_version: 2.43.0
+template_version: 2.43.0
 variant: base
 template_type: cc-only-legacy
 clis: ["claude"]
@@ -17,13 +17,14 @@ stats:
   composed: 1          # rules/agents.md base slot-keyed overlay (mode:slot)
   overlay_verified: 1
   variant_only: 0
-  purged: 0            # 13 active-purge paths absent on disk; full union 49 in .coc-obsoleted
+  purged: 0            # 13 active-purge paths absent on disk
   preserved: CLAUDE.md
-  changed_this_cycle:  # PR #489 global-rule prose trims, base lane
-    - rules/evidence-first-claims.md
-    - rules/security.md
-    - rules/zero-tolerance.md
-    # rules/agents.md re-composed byte-identical (PR #489 agents.md edit was rs-variant-only)
+  changed_this_cycle:  # #491, base lane
+    - rules/agents.md   # worktree MUST cluster extracted to skill; base overlay one-line bullets + restored binding-scoped-shard-PR clause
+    - rules/security.md # global slot-partition; base lane carries global Redactor Contract
+  content_guard:
+    coc_tier_leaks: 0   # checked copied set vs all 103 manifest coc-tier path patterns
+    note: skills/26-eatp-reference is co-tier (CO methodology), correctly included
   baselines_emitted:
     cc: 0              # CLAUDE.md preserved, not emitted
     codex: 0           # cc-only — no AGENTS.md
@@ -36,5 +37,5 @@ stats:
     lib_require_misses: 0
     build_path_leaks: 0
     operator_pii: 0
-    verify_overlays_base: "2/2 PASS, Failing: 0"
+    verify_overlays_base: "coc-claude-base variant-applied(base,slot) PASS"
     obsoleted_purged: true
