@@ -2,9 +2,9 @@
 visibility: public
 timestamp: 2026-06-12T00:00:00Z
 source: loom/.claude
-loom_sha: d7ec0d2
-upstream_version: 2.43.0
-template_version: 2.43.0
+loom_sha: 1b26e91
+upstream_version: 2.44.0
+template_version: 2.44.0
 variant: base
 template_type: cc-only-legacy
 clis: ["claude"]
@@ -19,12 +19,17 @@ stats:
   variant_only: 0
   purged: 0            # 13 active-purge paths absent on disk
   preserved: CLAUDE.md
-  changed_this_cycle:  # #491, base lane
-    - rules/agents.md   # worktree MUST cluster extracted to skill; base overlay one-line bullets + restored binding-scoped-shard-PR clause
-    - rules/security.md # global slot-partition; base lane carries global Redactor Contract
+  changed_this_cycle:  # loom 2.44.0 Gate-1 rs-ingest globals, base lane (6 modifications, 0 additions)
+    - rules/zero-tolerance.md        # Rule 3e binding-inheritance extension
+    - rules/value-prioritization.md  # MUST-2 SHA-pinned state-claim anchors
+    - rules/worktree-isolation.md    # Rule 2a re-assert cwd per invocation
+    - guides/rule-extracts/zero-tolerance.md
+    - skills/30-claude-code-patterns/worktree-orchestration.md
+    - skills/30-claude-code-patterns/closure-parity-specialist-discipline.md
   content_guard:
-    coc_tier_leaks: 0   # checked copied set vs all 103 manifest coc-tier path patterns
-    note: skills/26-eatp-reference is co-tier (CO methodology), correctly included
+    coc_tier_leaks: 0   # git status: all 6 changes status M, zero status A
+    coc_tier_additions: 0
+    note: testing.md x3 extensions are coc-tier (NOT in base [cc,co,onboarding] subscription) — correctly ABSENT from base lane
   baselines_emitted:
     cc: 0              # CLAUDE.md preserved, not emitted
     codex: 0           # cc-only — no AGENTS.md
