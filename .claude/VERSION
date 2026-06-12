@@ -1,17 +1,17 @@
 {
   "name": "coc-claude-base",
-  "version": "2.44.0",
+  "version": "2.45.0",
   "type": "coc-use-template",
   "description": "Language-agnostic, non-Kailash CO/COC USE template (variant: base)",
-  "synced_at": "2026-06-12T00:00:00Z",
+  "synced_at": "2026-06-12T05:43:32Z",
   "upstream": {
     "name": "loom",
     "type": "coc-source",
-    "version": "2.44.0",
-    "loom_sha": "1b26e91",
-    "synced_at": "2026-06-12T00:00:00Z",
-    "template_version": "2.44.0",
-    "build_version": "2.44.0"
+    "version": "2.45.0",
+    "loom_sha": "6d18fe9",
+    "synced_at": "2026-06-12T05:43:32Z",
+    "template_version": "2.45.0",
+    "build_version": "2.45.0"
   },
   "variant": "base",
   "tier_subscriptions": [
@@ -20,6 +20,16 @@
     "onboarding"
   ],
   "changelog": [
+    {
+      "date": "2026-06-12",
+      "version": "2.45.0",
+      "summary": "loom@6d18fe9 Gate-2 distribution (base cc-only, loom 2.45.0) — MultiEdit-removal canonicalization (PR #500, journals 0276+0277). Claude Code removed the MultiEdit tool; stale MultiEdit(...) permissions.deny entries fired session-start warnings. PAYLOAD landed for base lane: settings.json (10 MultiEdit deny entries removed, PreToolUse/PostToolUse matchers -> Edit|Write|NotebookEdit; target-owned language-agnostic-base description preserved); hooks/lib/tool-classes.js (MUTATION_TOOLS keeps MultiEdit as runtime legacy tolerance) + github-login.js (GITHUB_LOGIN_FIELD_NAMES SSOT +3 fields); rules/multi-operator-coordination.md (§7 + MUST-6 live-matcher prose) + self-referential-codify.md (tool-classes.js added to Rule-2 allowlist). codex-mcp-guard runtime files NOT emitted (cc-only-legacy, clis:[claude]). Base subscribes [cc,co,onboarding]; coc-tier excluded (BASE-LANE CONTENT GUARD: 0 Kailash specialist/skill additions). CC-only — NO Codex/Gemini emission. build:null — NO SDK pins. Consumers MUST NOT re-add MultiEdit to settings matchers/permissions.",
+      "changes": [
+        "DISTRIBUTE: sync-tier-aware.mjs --target base --template coc-claude-base. copied=844, verified 844/844 (14 content-equal after BUILD-internal strip, 830 byte-equal), overlay_applied=1 + overlay_verified byte-equal (rules/agents.md base slot), variant_only=0, purged=0 (13 active-purge paths absent), skipped loom_local=2 + exclude=885 + use_exclude=29 + no_tier_match=514.",
+        "settings.json: 10 MultiEdit(...) deny entries removed; both matchers Edit|Write|NotebookEdit; description stem language-agnostic base preserved.",
+        "verify-overlays.sh base: 2/2 passing 0 failing. visibility=public preserved. .gitignore noop (10 entries 586B)."
+      ]
+    },
     {
       "date": "2026-06-12",
       "version": "2.44.0",
