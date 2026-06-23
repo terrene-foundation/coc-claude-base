@@ -1,12 +1,12 @@
 # COC Sync Marker — coc-claude-base (base lane, cc-only-legacy)
-timestamp: 2026-06-17T13:51:33Z
+timestamp: 2026-06-23T00:00:00Z
 source: loom/.claude
-loom_sha: c1e52a62
+loom_sha: f7c236d
 variant: base
 clis: [claude]
 visibility: public
 stats:
-  copied: 869
+  copied: 940
   variant_only: 0
   overlay_applied: 1
   verify_failures: 0
@@ -14,5 +14,4 @@ stats:
   preserved: [CLAUDE.md, .proposals/, learning/, settings.local.json]
   baselines_emitted:
     cc: 0          # CLAUDE.md preserved, not emitted
-wave: sync-upflow-wave-3-todo-14
-note: FIRST real /sync-to-use of the Wave-1/2 sync-family artifacts; loom 2.45.0 unchanged (artifact wave).
+note: loom@f7c236d redistribution (base cc-only, loom 2.45.0 unchanged — c1e52a62..f7c236d catch-up). Base tiers=[cc,co,onboarding]; coc-tier excluded by design. 940 copied (14 content-equal after BUILD-internal strip, 926 byte-equal), 1 base overlay (rules/agents.md slot-composed) byte-equal, 0 purged (49 obsoleted absent on disk). CC-only — no Codex/Gemini emission. build:null — no SDK pins.
