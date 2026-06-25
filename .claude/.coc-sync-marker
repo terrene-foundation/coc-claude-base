@@ -1,17 +1,33 @@
 # COC Sync Marker — coc-claude-base (base lane, cc-only-legacy)
-timestamp: 2026-06-23T00:00:00Z
+timestamp: 2026-06-25T00:00:00Z
 source: loom/.claude
-loom_sha: f7c236d
+loom_sha: 8197257
 variant: base
 clis: [claude]
 visibility: public
 stats:
-  copied: 940
+  copied: 943
   variant_only: 0
   overlay_applied: 1
   verify_failures: 0
-  purged: 0
+  purged: 1            # commands/cli-audit.md (Step-4.5 BOTH-halves purge)
   preserved: [CLAUDE.md, .proposals/, learning/, settings.local.json]
   baselines_emitted:
     cc: 0          # CLAUDE.md preserved, not emitted
-note: loom@f7c236d redistribution (base cc-only, loom 2.45.0 unchanged — c1e52a62..f7c236d catch-up). Base tiers=[cc,co,onboarding]; coc-tier excluded by design. 940 copied (14 content-equal after BUILD-internal strip, 926 byte-equal), 1 base overlay (rules/agents.md slot-composed) byte-equal, 0 purged (49 obsoleted absent on disk). CC-only — no Codex/Gemini emission. build:null — no SDK pins.
+note: |
+  loom@8197257 Gate-2 distribution (base cc-only, loom 2.45.0 unchanged — f7c236d..8197257).
+  HEADLINE: MO-OPT W1 — multi-operator coordination substrate made OPT-IN (journal/0330 + 0331).
+  W1 lives in tier-independent .claude/hooks/** so it ships to the base lane: new lib
+  hooks/lib/coordination-mode.js (isCoordinationEnabled 5-tier precedence predicate);
+  isCoordinationEnabled early-return-to-passthrough hoists in integrity-guard.js +
+  journal-write-guard.js + signing-mutation-guard.js + hooks/lib/codify-lease.js +
+  hooks/lib/operator-id.js; top-level hook adjacency-leasecheck.js. Un-enrolled non-Kailash
+  base consumers now get clean passthrough vs the prior unconditional-guard disruption (four
+  PreToolUse guards fired on independent preconditions a never-enrolled repo could not satisfy).
+  Base tiers=[cc,co,onboarding]; coc-tier excluded by design (no_tier_match=538). 943 copied
+  (13 content-equal after BUILD-internal strip, 930 byte-equal), 1 base overlay (rules/agents.md
+  slot-composed) byte-equal, purged=1 (commands/cli-audit.md via Step-4.5 BOTH-halves purge;
+  remaining 65 obsoleted-union paths absent on disk). .coc-obsoleted regenerated (66 entries =
+  union obsoleted + use_obsoleted). CC-only — no Codex/Gemini emission. build:null — no SDK pins.
+  W1-landing verification: coordination-mode.js present + isCoordinationEnabled grep in
+  integrity-guard.js — PASS.

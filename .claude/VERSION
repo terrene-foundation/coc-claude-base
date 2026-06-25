@@ -1,15 +1,15 @@
 {
   "name": "coc-claude-base",
-  "version": "2.45.2",
+  "version": "2.45.3",
   "type": "coc-use-template",
   "description": "Language-agnostic, non-Kailash CO/COC USE template (variant: base)",
-  "synced_at": "2026-06-23T00:00:00Z",
+  "synced_at": "2026-06-25T00:00:00Z",
   "upstream": {
     "name": "loom",
     "type": "coc-source",
     "version": "2.45.0",
-    "loom_sha": "f7c236d",
-    "synced_at": "2026-06-23T00:00:00Z",
+    "loom_sha": "8197257",
+    "synced_at": "2026-06-25T00:00:00Z",
     "template_version": "2.45.0",
     "build_version": "2.45.0"
   },
@@ -20,6 +20,20 @@
     "onboarding"
   ],
   "changelog": [
+    {
+      "date": "2026-06-25",
+      "version": "2.45.3",
+      "summary": "loom@8197257 Gate-2 distribution (base CC-only, loom 2.45.0) — MO-OPT W1: the multi-operator coordination substrate is now OPT-IN. PAYLOAD landed for base lane (W1 lives in tier-independent .claude/hooks/**, so it ships to base): new lib hooks/lib/coordination-mode.js (isCoordinationEnabled 5-tier precedence predicate); isCoordinationEnabled early-return-to-passthrough hoists in integrity-guard.js + journal-write-guard.js + signing-mutation-guard.js + hooks/lib/codify-lease.js + hooks/lib/operator-id.js; top-level hook adjacency-leasecheck.js. WHY: un-enrolled non-Kailash base consumers (solo operators, no roster) now get clean passthrough — pre-W1, four PreToolUse guards fired on independent preconditions a never-enrolled repo could not satisfy (integrity-guard's codify-branch test fired unconditionally on main/feat/*), disrupting every solo base consumer. Receipts: journal/0330 + journal/0331. Base subscribes [cc,co,onboarding]; coc-tier excluded by design (BASE-LANE CONTENT GUARD: 0 Kailash specialist/skill additions). CC-only (clis:[claude]) — NO Codex/Gemini emission. build:null — NO SDK pins.",
+      "changes": [
+        "DISTRIBUTE: sync-tier-aware.mjs --target base --template coc-claude-base. copied=943, verified 943/943 delivered (13 content-equal after BUILD-internal strip, 930 byte-equal), overlay_applied=1 + overlay_verified byte-equal (rules/agents.md base slot), variant_only=0, purged=0 (use_obsoleted absent on disk; manual Step-4.5 BOTH-halves purge removed 1: commands/cli-audit.md), skipped loom_local=2 + exclude=997 + use_exclude=29 + no_tier_match=538.",
+        "W1 PAYLOAD (tier-independent hooks): hooks/lib/coordination-mode.js NEW; isCoordinationEnabled hoists in integrity-guard.js + journal-write-guard.js + signing-mutation-guard.js + hooks/lib/codify-lease.js + hooks/lib/operator-id.js; adjacency-leasecheck.js top-level. W1-landing verification PASS (coordination-mode.js present + isCoordinationEnabled grep in integrity-guard.js).",
+        "OBSOLETED: .coc-obsoleted regenerated (66 entries = union obsoleted + use_obsoleted). Step-4.5 BOTH-halves purge ran (tier tool does use_obsoleted only).",
+        "CONTENT GUARD: 0 Kailash coc-tier specialist additions. CC-only (clis:[claude]) — no Codex/Gemini emission; no .codex/.gemini/.codex-mcp-guard/AGENTS.md/GEMINI.md/bin leak.",
+        "VERIFY: verify-overlays.sh base Failing:0. settings.json hook integrity verified; 0 scripts/hooks refs; 0 operator-PII; description (language-agnostic base) preserved.",
+        "PINS: N/A (build:null — non-Kailash base; no SDK pins; SDK-pin/BUILD-proposal steps correctly skipped).",
+        "BUMP: template 2.45.2->2.45.3; loom_sha f7c236d->8197257; upstream loom 2.45.0 unchanged."
+      ]
+    },
     {
       "date": "2026-06-23",
       "version": "2.45.2",
