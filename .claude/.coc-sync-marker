@@ -1,27 +1,35 @@
 # COC Sync Marker — coc-claude-base (base lane, cc-only-legacy)
-timestamp: 2026-06-26T14:13:12Z
+timestamp: 2026-06-26T23:00:53Z
 source: loom/.claude
-loom_sha: 9755c2d
+loom_sha: 9101e34
 variant: base
 clis: [claude]
 visibility: public
 stats:
-  copied: 1055
+  copied: 0            # narrow propagation — no .claude/ content re-emit (--verify CONSISTENT)
   variant_only: 0
-  overlay_applied: 1
+  overlay_applied: 0   # rules/agents.md base slot byte-equal from prior cycle (verify-overlays Failing:0)
   verify_failures: 0
-  purged: 0            # obsoleted-union paths absent on disk
+  purged: 0            # codex-templates/+gemini-templates/ already ABSENT on base disk (base always clean)
+  obsoleted_union: 69  # regenerated .coc-obsoleted (was 64 unique / 66 lines); +codex-templates/+gemini-templates/+sync.md trio, additive
   preserved: [CLAUDE.md, .proposals/, learning/, settings.local.json]
   baselines_emitted:
     cc: 0          # CLAUDE.md preserved, not emitted
 note: |
-  loom@9755c2d Gate-2 distribution (base cc-only, loom 2.45.0 unchanged — 8197257..9755c2d).
-  HEADLINE: F1 distribution — Shard-A/B/C rule narrowing+extraction, F5 base re-tier, dogfood
-  catch-up. .claude/ content (1055 copied, 1 base overlay rules/agents.md slot-composed, 0
-  variant_only, 0 purged) applied + verified CONSISTENT by the orchestrator via
-  sync-tier-aware.mjs --target base --all-templates. Base tiers=[cc,co,onboarding]; coc-tier
-  excluded by design (no Kailash specialists/skills). CC-only (clis:[claude]) — NO Codex/Gemini
-  emission; no .codex/.gemini/.codex-mcp-guard/AGENTS.md/GEMINI.md/bin leak. CLAUDE.md preserved
-  (template-owned). SCANS: 0 operator-PII, 0 scripts/hooks refs, 0 loom-internal path leaks,
-  0 Kailash coc-tier leaks. build:null — no SDK pins (sdk_packages absent). VERSION
-  2.45.3->2.45.4; loom_sha 8197257->9755c2d; upstream loom 2.45.0 unchanged.
+  loom@9101e34 narrow propagation (base cc-only, loom 2.45.0 unchanged — 9755c2d..9101e34).
+  HEADLINE: PR #685 added .claude/codex-templates/ + .claude/gemini-templates/ to
+  sync-manifest::obsoleted (loom-internal emitter SOURCE trees; an F1-distribution-redteam MED
+  finding on the rs templates where a v2.31.0 catch-up had committed them — base templates were
+  ALWAYS clean). This is a manifest-propagation cycle, NOT a content re-emit. sync-tier-aware.mjs
+  --target base --all-templates --verify reported CONSISTENT (1056/1056 in-plan, no obsoleted
+  path present on disk). REQUIRED CHANGE: .coc-obsoleted regenerated (Step 4.5 union of
+  obsoleted+use_obsoleted) — dedup union now 69 path entries (was 64 unique / 66 lines), with
+  .claude/codex-templates/ + .claude/gemini-templates/ now present. ADDITIVE: 0 prior entries
+  dropped (comm -23 empty); the prior file's internal duplicate terrene-naming/independence pair
+  collapsed to single entries; +sync.md trio folded in (already manifest-declared). Both template
+  dirs absent on disk → 0 purged here; the .coc-obsoleted entry keeps downstream
+  /sync-from-template consumers able to purge them. CC-only (clis:[claude]) — NO Codex/Gemini
+  emission; no .codex/.gemini/.codex-mcp-guard/AGENTS.md/GEMINI.md/bin emission. CLAUDE.md
+  preserved (template-owned). verify-overlays.sh base Failing:0. build:null — no SDK pins
+  (base stack-agnostic; no pin change). VERSION 2.45.4->2.45.5; loom_sha 9755c2d->9101e34;
+  upstream loom 2.45.0 unchanged.
